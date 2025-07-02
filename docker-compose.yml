@@ -1,0 +1,17 @@
+
+
+services:
+  api:
+    # Constrói a imagem a partir do Dockerfile no diretório atual
+    build: .
+    # Nome do contêiner para fácil referência
+    container_name: api
+    # Mapeia a porta 8000 do host para a porta 8000 do contêiner
+    ports:
+      - "8000:8000"
+    # Monta um volume nomeado para persistir o banco de dados (escola.db)
+    volumes:
+      - db_data:/app
+
+volumes:
+  db_data: {}
